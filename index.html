@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAMP Modpack - Compact</title>
+    <style>
+        body {
+            background-color: black;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Menu Garis 3 Lebih Kecil */
+        .menu-toggle {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            z-index: 100;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .line {
+            width: 22px;
+            height: 3px;
+            background-color: white;
+            border-radius: 2px;
+        }
+
+        /* Sidebar Lebih Ramping */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: -200px;
+            width: 200px;
+            height: 100%;
+            background-color: #0d0d0d;
+            transition: 0.3s ease;
+            padding-top: 60px;
+            border-right: 1px solid #222;
+            z-index: 90;
+        }
+
+        #menu-check:checked ~ .sidebar {
+            left: 0;
+        }
+
+        .sidebar a {
+            display: block;
+            padding: 12px 20px;
+            text-decoration: none;
+            color: #ccc;
+            font-size: 15px;
+            transition: 0.2s;
+        }
+
+        .sidebar .packet-link {
+            color: yellow;
+        }
+
+        .sidebar a:hover {
+            background-color: #1a1a1a;
+            color: white;
+        }
+
+        #menu-check {
+            display: none;
+        }
+
+        /* Teks Utama Lebih Kecil & Sleek */
+        .hero-text {
+            text-align: center;
+            color: white;
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+        }
+
+        .hero-text h1 {
+            font-size: 50px; /* Diperkecil dari 80px */
+            margin: 0;
+            font-weight: bold;
+            font-style: italic;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .hero-text p {
+            font-size: 18px; /* Diperkecil dari 30px */
+            margin: 0;
+            font-weight: bold;
+            font-style: italic;
+            letter-spacing: 3px;
+            color: #bbb;
+        }
+
+        /* Halaman Packet V1 */
+        .page-content {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 200;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        #packet-v1:target {
+            display: flex;
+        }
+
+        .mod-info {
+            color: white;
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .click-text {
+            color: yellow;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .btn-download {
+            background-color: yellow;
+            color: black;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+            border-radius: 4px;
+            transition: 0.3s;
+        }
+
+        .btn-download:hover {
+            box-shadow: 0 0 10px yellow;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            color: white;
+            text-decoration: none;
+            font-size: 25px;
+        }
+    </style>
+</head>
+<body>
+
+    <input type="checkbox" id="menu-check">
+
+    <label for="menu-check" class="menu-toggle">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </label>
+
+    <div class="sidebar">
+        <a href="#">Home</a>
+        <a href="#">Settings</a>
+        <a href="#packet-v1" class="packet-link">Packet V1</a>
+    </div>
+
+    <div class="hero-text">
+        <h1>Modpack</h1>
+        <p>SAMP ROLEPLAY</p>
+    </div>
+
+    <div id="packet-v1" class="page-content">
+        <a href="#" class="close-btn">&times;</a>
+        
+        <div class="mod-info">
+            MODPACK LIKES PC V1 <br>
+            AUTHOR GATAU KALO MAU DOWNLOAD AJA.
+        </div>
+        
+        <span class="click-text">KLIK HERE FOR DOWNLOAD</span>
+        
+        <a href="https://www.mediafire.com/file/locjfzphu0oqjpq/MODPACK_COMPE_FPS_UP.7z/file" 
+           target="_blank" 
+           class="btn-download">
+           Download
+        </a>
+    </div>
+
+</body>
+</html>
